@@ -145,37 +145,6 @@ fetch_repo () {
 }
 # }}}
 
-# install_vim {{{
-install_vim () {
-  if [[ -f "$HOME/.vimrc" ]]; then
-    mv "$HOME/.vimrc" "$HOME/.vimrc_back"
-    success "备份 $HOME/.vimrc 至 $HOME/.vimrc_back"
-  fi
-
-  if [[ -d "$HOME/.vim" ]]; then
-    if [[ "$(readlink $HOME/.vim)" =~ \.SpaceVim$ ]]; then
-      success "已为 vim 安装了 SpaceVim"
-    else
-      mv "$HOME/.vim" "$HOME/.vim_back"
-      success "备份 $HOME/.vim 至 $HOME/.vim_back"
-      ln -s "$HOME/.SpaceVim" "$HOME/.vim"
-      success "已为 vim 安装了 SpaceVim"
-    fi
-  else
-    ln -s "$HOME/.SpaceVim" "$HOME/.vim"
-    success "已为 vim 安装了 SpaceVim"
-  fi
-}
-# }}}
-
-
-
-
-
-
-
-
-
 # check_requirements {{{
 check_requirements () {
   info "正在检测 SpaceVim 依赖环境..."
