@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/4658283/shell-script-to-send-email
